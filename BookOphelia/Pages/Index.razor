@@ -1,0 +1,196 @@
+﻿@page "/"
+
+<style>
+    .background-container {
+        position: relative;
+        width: 100%;
+        height: 550px; 
+    }
+
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        position: absolute;
+        top: -80px;
+    }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 80px;
+        color: white;
+    }
+    
+    body {
+        background-color: whitesmoke;
+    }
+
+    .higher-content {
+        margin-top: 20px;
+    }
+
+    .cards-container {
+        display: flow-root;
+        justify-content: space-evenly;
+    }
+
+    .small-card {
+        width: 200px;
+        height: 250px;
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .card-image {
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    .mud-typography-body2
+    {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2; 
+        white-space: normal;
+    }
+    .card-name{
+        font-weight: bold;
+        padding-bottom: -10px;
+        height: 50px;
+    }
+    .card-content{
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* ova e so div */
+    }
+    
+    .mud-card-content
+    {
+        height: auto !important; /* a ova e bez div no pozadinski sam si gi pravi ikolkavi da bidat */
+    }
+    
+</style>
+
+<PageTitle>Home</PageTitle>
+
+<div class="background-container">
+    <img class="background-image" src="photo/here.jpg" alt="Background Image">
+    <div class="text-overlay">
+        <MudText Typo="Typo.h4">
+            Reading a good book is like a joke – it might take a page turner to get to the punchline!
+        </MudText>
+    </div>
+</div>
+
+<div class="higher-content">
+    <MudPaper>
+        <MudText Typo="Typo.h4" GutterBottom="true" Style="font-size: 40px; font-weight: bold;">
+            Reading a good book is like a joke – it might take a page turner to get to the punchline!
+        </MudText>
+        <MudText Class="mb-4" Style="font-size: 14px;">
+            "Books are like portable vacations: no baggage fees, unlimited destinations,
+            and the only turbulence is an unexpected plot twist. Grab a book, and let the adventure unfold without
+            leaving the comfort of your favorite reading nook!"
+        </MudText>
+    </MudPaper>
+</div>
+
+
+<div class="cards-container">
+
+    <MudCard class="small-card">
+        <MudCardHeader>
+            <img class="card-image" src="photo/2 (1).png" alt="Read Icon">
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Class="card-name">Read free library books</MudText>
+            <MudText Typo="Typo.body2">Millions of books available.</MudText> 
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Dark">Learn More</MudButton>
+        </MudCardActions>
+    </MudCard>
+    @* 
+    ova ne e so div *@ 
+
+
+    <MudCard class="small-card">
+        <MudCardHeader>
+            <img class="card-image" src="photo/read.png" alt="Read Icon">
+        </MudCardHeader>
+        <div class="card-content">
+            <MudText Class="card-name">Set a yearly reading goal</MudText>
+            <MudText Typo="Typo.body2">
+                Learn how to set a yearly reading goal and track what you read.
+            </MudText>
+        </div>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+        </MudCardActions>
+    </MudCard>
+    @* ova  e so div za da nozes pozadinski da si pravis kako sakas *@
+
+    <MudCard class="small-card">
+        <MudCardHeader>
+            <img class="card-image" src="photo/3.png" alt="Read Icon" />
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Class="card-name">Keep track of your books</MudText>
+            <MudText Typo="Typo.body2">Organize your books using lists.</MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+        </MudCardActions>
+    </MudCard>
+
+
+    <MudCard class="small-card">
+        <MudCardHeader>
+            <img class="card-image" src="photo/4.png" alt="Read Icon">
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Class="card-name">Try the virtual library explorer</MudText>
+            <MudText Typo="Typo.body2">
+                Digital shelvs organized like a physical library.
+            </MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+        </MudCardActions>
+    </MudCard>
+
+
+    <MudCard class="small-card">
+        <MudCardHeader>
+            <img class="card-image" src="photo/5.png" alt="Read Icon">
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Class="card-name">Try fulltext search </MudText>
+            <MudText Typo="Typo.body2">
+                Find matching results within the text of millions of books.
+            </MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+        </MudCardActions>
+    </MudCard>
+
+
+   @*  <MudCard class="small-card">
+        <MudCardHeader>
+            <img class="card-image" src="photo/6.png" alt="Read Icon">
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Class="card-name">Be an open librarian</MudText>
+            <MudText Typo="Typo.body2"> Dozens of ways you can help imrpove the library.
+            </MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+        </MudCardActions>
+    </MudCard> *@
+</div>

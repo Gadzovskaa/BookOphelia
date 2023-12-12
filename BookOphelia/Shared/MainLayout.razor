@@ -1,0 +1,61 @@
+﻿@inherits LayoutComponentBase
+<style> {
+        background-color: whitesmoke;
+    }
+
+    .appbar
+    {
+        background-color: #2c3e50;
+        color: whitesmoke;
+    }
+
+    .drawer {
+        background-color: #2c3e50;
+        color: whitesmoke;
+    }
+
+    .small-card {
+        
+        height: 300px; 
+    }
+
+        .small-card .mud-card-content {
+           
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+</style>
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Class="appbar" Elevation="0">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudSpacer />
+
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" Class="drawer" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">BookOphelia </MudText> '
+        </MudDrawerHeader>
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
